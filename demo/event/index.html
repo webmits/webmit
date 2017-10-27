@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/font/font.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="UTF-8">
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+    <script src="carouselengine/amazingcarousel.js"></script>
+    <link rel="stylesheet" type="text/css" href="carouselengine/initcarousel-1.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="carouselengine/initcarousel-1.js"></script>
+	<title>Event</title>
+</head>
+<body>
+		<div id="bg">
+		<div class="bg_popup">
+		</div>
+			<div id="bg_popup_th">
+			<div class="close"></div>
+			<h3></h3>
+			<p class="text"></p>
+			</div>
+		</div>
+
+<div class="popup">
+<div class="bg_popup">
+</div>
+<!--Форма "заказать звонок"-->
+<div id="form">
+	<div class="head_form"><div class="close"></div><h2>Оставьте ваш номер телефона и мы перезвоним вам!</h2></div>
+
+	<div class="body_form">
+		<p>Ваше Имя <span>*</span></p>
+		<input type="text" id="name_inp" class="name_inp" name="name" value="">
+		<p>Телефон <span>*</span></p>
+		<input type="text" id="phone_inp" class="phone_inp" name="phone" value="">
+		<input type="button" id="btn_form" class="btn" value="ОТПРАВИТЬ">
+	</div>
+</div>
+<!--Форма "связаться чтобы задать вопрос"-->
+<div id="form1">
+	<div class="head_form"><div class="close"></div><h2>Оставьте ваши контактные данные:</h2></div>
+
+	<div class="body_form">
+		<p>Ваше Имя <span>*</span></p>
+		<input type="text" id="name_inp1" class="name_inp" name="name" value="">
+		<p>Телефон <span></span></p>
+		<input type="text" id="phone_inp1" class="phone_inp" name="phone" value="">
+		<p>Ваш email <span>*</span></p>
+		<input type="text" id="email_inp1" class="email_inp" name="email" value="">
+		<input type="button" id="btn_form1" class="btn" value="ОТПРАВИТЬ">
+	</div>
+</div>
+<!--Форма "начать праздник"-->
+<div id="form2">
+	<div class="head_form"><div class="close"></div><h2>Ваши пожелания?</h2></div>
+
+	<div class="body_form">
+		<p>Ваше Имя <span>*</span></p>
+		<input type="text" class="name_inp" id="name_inp2" name="name" value="">
+		<p>Телефон <span>*</span></p>
+		<input type="text" class="phone_inp" id="phone_inp2" name="phone" value="">
+		<p>Ваш email <span>*</span></p>
+		<input type="text" class="email_inp" id="email_inp2" name="email" value="">
+		<p>Сообщение <span></span></p>
+		<textarea class="message" id="message2"></textarea>
+		<input type="button" id="btn_form2"  class="btn" value="ОТПРАВИТЬ">
+	</div>
+</div>
+<!--Форма "ХОЧУ УБЕДИТЬСЯ"-->
+<div id="form3">
+	<div class="head_form"><div class="close"></div><h2>Мы вам всё расскажем!</h2></div>
+
+	<div class="body_form">
+		<p>Ваше Имя <span>*</span></p>
+		<input type="text" class="name_inp" id="name_inp3" name="name" value="">
+		<p>Телефон <span>*</span></p>
+		<input type="text" class="phone_inp" id="phone_inp3" name="phone" value="">
+		<input type="button" id="btn_form3"  class="btn" value="ОТПРАВИТЬ">
+	</div>
+</div>
+<!--Форма "ПОЛУЧИТЬ СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ! "-->
+<div id="form4">
+	<div class="head_form"><div class="close"></div><h2>Мы вам вышлем!</h2></div>
+
+	<div class="body_form">
+		<p>Ваше Имя <span>*</span></p>
+		<input type="text" class="name_inp" id="name_inp4" name="name" value="">
+		<p>Ваш email <span>*</span></p>
+		<input type="text" class="email_inp" id="email_inp4" name="email" value="">
+		<input type="button" id="btn_form4"  class="btn" value="ОТПРАВИТЬ">
+	</div>
+</div>
+<!--Форма "ХОТИТЕ ЕЩЕ КРУЧЕ? ЖМИТЕ СИЛЬНЕЕ! "-->
+<div id="form5">
+	<div class="head_form"><div class="close"></div><h2>У вас есть какие-то особые пожелания?</h2></div>
+
+	<div class="body_form">
+		<p>Ваше Имя <span>*</span></p>
+		<input type="text" class="name_inp" id="name_inp5" name="name" value="">
+		<p>Телефон <span>*</span></p>
+		<input type="text" class="phone_inp" id="phone_inp5" name="phone" value="">
+		<p>Ваш email <span>*</span></p>
+		<input type="text" class="email_inp" id="email_inp5" name="email" value="">
+		<p>Сообщение <span></span></p>
+		<textarea class="message" id="message5"></textarea>
+		<input type="button" id="btn_form5"  class="btn" value="ОТПРАВИТЬ">
+	</div>
+</div>
+<!--Форма "Наши Цены!"-->
+<div id="form6">
+	<div class="head_form"><div class="close"></div><h2>Как с вами связаться?</h2></div>
+
+	<div class="body_form">
+		<p>Ваше Имя <span>*</span></p>
+		<input type="text" class="name_inp" id="name_inp6" name="name" value="">
+		<p>Телефон <span>*</span></p>
+		<input type="text" class="phone_inp" id="phone_inp6" name="phone" value="">
+		<p>Ваш email <span></span></p>
+		<input type="text" class="email_inp" id="email_inp6" name="email" value="">
+		<input type="button" id="btn_form6"  class="btn" value="ОТПРАВИТЬ">
+	</div>
+</div>
+<!--Форма "Наши Цены!"-->
+<div id="form7">
+	<div class="head_form"><div class="close"></div><h2>Как с вами связаться?</h2></div>
+
+	<div class="body_form">
+		<p>Ваше Имя <span>*</span></p>
+		<input type="text" class="name_inp" id="name_inp7" name="name" value="">
+		<p>Телефон <span>*</span></p>
+		<input type="text" class="phone_inp" id="phone_inp7" name="phone" value="">
+		<p>Ваш email <span></span></p>
+		<input type="text" class="email_inp" id="email_inp7" name="email" value="">
+		<input type="button" id="btn_form7"  class="btn" value="ОТПРАВИТЬ">
+	</div>
+</div>
+<!--Форма "Наши Цены!"-->
+<div id="form8">
+	<div class="head_form"><div class="close"></div><h2>Как с вами связаться?</h2></div>
+
+	<div class="body_form">
+		<p>Ваше Имя <span>*</span></p>
+		<input type="text" class="name_inp" id="name_inp8" name="name" value="">
+		<p>Телефон <span>*</span></p>
+		<input type="text" class="phone_inp" id="phone_inp8" name="phone" value="">
+		<p>Ваш email <span></span></p>
+		<input type="text" class="email_inp" id="email_inp8" name="email" value="">
+		<input type="button" id="btn_form8"  class="btn" value="ОТПРАВИТЬ">
+	</div>
+</div>
+<!--Форма "ЭТО ПРОСТО ПРАЗДНИК КАКОЙ-ТО! "-->
+<div id="form9">
+	<div class="head_form"><div class="close"></div><h2>И у вас будет! Оставьте нам свои контактные данные</h2></div>
+
+	<div class="body_form">
+		<p>Ваше Имя <span>*</span></p>
+		<input type="text" class="name_inp" id="name_inp9" name="name" value="">
+		<p>Телефон <span>*</span></p>
+		<input type="text" class="phone_inp" id="phone_inp9" name="phone" value="">
+		<p>Ваш email <span>*</span></p>
+		<input type="text" class="email_inp" id="email_inp9" name="email" value="">
+		<p>Сообщение <span></span></p>
+		<textarea class="message" id="message9"></textarea>
+		<input type="button" id="btn_form9"  class="btn" value="ОТПРАВИТЬ">
+	</div>
+</div>
+
+</div>
+
+
+
+
+<div id="wrapper">
+	<div id="block1">
+		<div id="header">
+			<div class="wrapper">
+				<ul>
+					<li><a href=""><img src="img/icon_fb.png" width="38" height="38" alt="fb"></a></li>
+					<li><a href=""><img src="img/icon_vk.png" width="38" height="38" alt="vk"></a></li>
+					<li><a href=""><img src="img/icon_inst.png" width="38" height="38" alt="inst"></a></li>
+				</ul>
+				<div id="phone">
+				<p class="phone">+7 (495) 741 16 25</p>
+				<p class="order">заказать обратный звонок</p>
+			</div>
+			</div>
+
+			
+		</div>
+
+		<div class="wrapper">
+			<div id="squar">
+				<h1><span>BRAIN</span> EVENT</h1>
+				<p>КОНСТРУКТОРСКОЕ  БЮРО <br><span>П Р А З Д Н И К О В</span></p>
+			</div>
+
+			<div id="creat">
+				
+				<p>ОРГАНИЗОВЫВАЕМ<span> КРЕАТИВНЫЕ </span>МЕРОПРИЯТИЯ</p>
+			</div>
+
+			<input type="button" id="btn" value="СВЯЗАТЬСЯ  ЧТОБЫ  ЗАДАТЬ  ВОПРОС">
+		</div>
+	</div>
+
+		<div id="block2">
+			<div id="top_block2">
+				<div class="wrapper">	
+				<div class="indent">	
+					<h2>ВЫБЕРИТЕ ВАШЕ <span>МЕРОПРИЯТИЕ</span></h2>
+				</div>
+				</div>
+			</div>
+		<div class="wrapper">
+			<ul class="show">
+				<li id="activ" class="slide1">НОВОГОДНИЙ<br>КОРПОРАТИВ</li>
+				<li class="slide2">КАЛЕНДАРНЫЕ<br>ПРАЗДНИКИ</li>
+				<li class="slide3">ЛЕТНИЙ ВЫЕЗД<br>КОМПАНИИ</li>
+				<li class="slide4">Церемонии <br>и гала-ужины</li>
+				<li class="slide5">КЛИЕНТСКИЕ<br>МЕРОПРИЯТИЯ</li>
+				<li class="slide6">ШОУ РУМ</li>
+			</ul>
+
+			<ul class="show">
+				<li class="slide7">ЮБИЛЕЙ<br>КОМПАНИИ</li>
+				<li class="slide8">Презентации и <br>конференции</li>
+				<li class="slide9">ТИМБИЛДИНГ<br>ИЛИ ТРЕНИНГ</li>
+				<li class="slide10">игры и квесты</li>
+				<li class="slide11">ЧАСТНЫЕ<br>МЕРОПРИЯТИЯ</li>
+				<li class="slide12">Чики пиба рум</li>
+			</ul>
+
+			<div id="slide">
+			<div class="slide">
+				<div id="slide1">
+					<div class="indent"><h2>НОВОГОДНИЙ КОРПОРАТИВ</h2></div>
+				</div>
+				<div id="slide2">
+					<div class="indent"><h2>КАЛЕНДАРНЫЕ ПРАЗДНИКИ</h2></div>
+				</div>
+				<div id="slide3">
+					<div class="indent"><h2>ЛЕТНИЙ <span>ВЫЕЗД</span> КОМПАНИИ</h2></div>
+				</div>
+				<div id="slide4">
+					<div class="indent"><h2>ЦЕРЕМОНИИ И ГАЛА-УЖИНЫ</h2></div>
+				</div>
+				<div id="slide5">
+					<div class="indent"><h2>КЛИЕНТСКИЕ МЕРОПРИЯТИЯ</h2></div>
+				</div>
+				<div id="slide6">
+					<div class="indent"><h2>ШОУ РУМ</h2></div>
+				</div>
+				<div id="slide7">
+					<div class="indent"><h2>ЮБИЛЕЙ КОМПАНИИ</h2></div>
+				</div>
+				<div id="slide8">
+					<div class="indent"><h2>ПРЕЗЕНТАЦИИ И КОНФЕРЕНЦИИ</h2></div>
+				</div>
+				<div id="slide9">
+					<div class="indent"><h2>ТИМБИЛДИНГ ИЛИ ТРЕНИНГ</h2></div>
+				</div>
+				<div id="slide10">
+					<div class="indent"><h2>ИГРЫ И КВЕСТЫ</h2></div>
+				</div>
+				<div id="slide11">
+					<div class="indent"><h2>ЧАСТНЫЕ МЕРОПРИЯТИЯ</h2></div>
+				</div>
+				<div id="slide12">
+					<div class="indent"><h2>ЧИКИ <span>ПИБА</span> РУМ</h2></div>
+				</div>
+			</div>
+			</div>
+			<ul class="slide_btn">
+				<li id="act" class="slide1"></li>
+				<li class="slide2"></li>
+				<li class="slide3"></li>
+				<li class="slide4"></li>
+				<li class="slide5"></li>
+				<li class="slide6"></li>
+				<li class="slide7"></li>
+				<li class="slide8"></li>
+				<li class="slide9"></li>
+				<li class="slide10"></li>
+				<li class="slide11"></li>
+				<li class="slide12"></li>
+			</ul>
+
+			<input type="button" id="btn2" value="НАЧАТЬ ПРАЗДНИК!">
+		</div>
+	</div>
+
+	<div id="block3">
+		<div id="top_block3">
+			<div class="wrapper">
+				<div class="indent">	
+						<h2>О НАС В <span>ЦИФРАХ</span></h2>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+				<p class="price">2005</p>
+
+				<p class="text1">11 лет на рынке<br>
+организации праздников</p>
+				<div id="lenta"><p>начало РАБОТЫ</p></div>
+
+				<p class="text2">69 человек в команде<br>и 1 босоногий мальчик</p>
+
+				<div class="line"></div>
+
+				<ul>
+					<li><h2>> 1500</h2><p>проведенных<br>мероприятий</p></li>
+					<li><h2>> 100 000</h2><p>довольных<br>клиентов</p></li>
+					<li><h2>990 000 000 Р</h2><p>общий бюджет<br>организованных<br>мероприятий</p></li>
+					<li><h2>> 10 000</h2><p>литров<br>
+выпитого<br>шампанского</p></li>
+					<li><h2>> 1200</h2><p>прослушанных<br>песен Агутина</p></li>
+
+				</ul>
+
+				<input type="button" id="btn3" value="ХОЧУ УБЕДИТЬСЯ!">
+		</div>
+	</div>
+
+	<div id="block4">
+		<div id="top_block4">
+			<div class="wrapper">
+				<div class="indent">	
+						<h2>НАШИ <span>ГАРАНТИИ</span></h2>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<ul>
+			<li><img src="img/icon1.png" width="72" height="72" alt="icon1"> <h2>ВЫЯСНЯЕМ ЦЕЛИ И ЗАДАЧИ</h2><p>Подробно выясняем<br> потребности вашей компании<br>и пожелания по предстоящему<br>событию, обсуждаем бюджет и<br>подходящие варианты<br>сотрудничества.</p></li>
+			<li><img src="img/icon2.png" width="72" height="72" alt="icon2"> <h2>СОСТАВЛЯЕМ ПРЕДЛОЖЕНИЯ</h2><p>Составляем предварительное<br>пакетное предложение,<br>обсуждаем варианты мест<br>проведения и всю программу<br>будущего мероприятия.</p></li>
+			<li><img src="img/icon3.png" width="72" height="72" alt="icon3"> <h2>ПОДПИСЫВАЕМ ДОГОВОР</h2><p>Уточнив все детали будущего<br>проекта и обговорив все<br>важные моменты, мы<br>подписываем договор<br>и все приложения.</p></li>
+			<li><img src="img/icon4.png" width="72" height="72" alt="icon4"> <h2>УТВЕРЖДАЕМ ПРОГРАММУ</h2><p>Утверждаем и согласовываем<br>программу. Пишем сценарий. <br>Обсуждаем все тонкости и<br>детали реализации<br>предстоящего мероприятия.</p></li>
+			<li><img src="img/icon5.png" width="72" height="72" alt="icon5"> <h2>ПРОВОДИМ МЕРОПРИЯТИЕ</h2><p>Как всегда, с блеском<br>проводим мероприятие.<br>Гостям и сотрудникам весело и<br>интересно, а руководители<br>получают запланированный<br>результат!</p></li>
+			<li><img src="img/icon6.png" width="72" height="72" alt="icon6"> <h2>ХОП ХЭЙ ЛАЛА ЛЭЙ<br>Что ни говори</h2><p>Приезжаем к Вам в офис,<br>привозим закрывающие<br>документы и смонтированный<br>фильм о проведенном<br>мероприятии.</p></li>
+
+			</ul>
+			<input type="button" id="btn4" value="ПОЛУЧИТЬ СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ!">
+		</div>
+	</div>
+	<div id="block5">
+		<div id="top_block5">
+			<div class="wrapper">
+				<div class="indent">	
+						<h2>ОТЗЫВЫ <span>КЛИЕНТОВ</span></h2>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+<div id="amazingcarousel-container-1">
+    <div id="amazingcarousel-1" style="display:none;position:relative;width:100%;max-width:1116px;margin:0px auto 0px;">
+        <div class="amazingcarousel-list-container">
+            <ul class="amazingcarousel-list">
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="img/sert1-lightbox.jpg" title="sert1"  class="html5lightbox" data-group="amazingcarousel-1"><img src="img/sert1.jpg"  alt="sert1" /></a></div>
+                  </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="img/sert2-lightbox.jpg" title="sert2"  class="html5lightbox" data-group="amazingcarousel-1"><img src="img/sert2.jpg"  alt="sert2" /></a></div>
+                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="img/sert3-lightbox.jpg" title="sert3"  class="html5lightbox" data-group="amazingcarousel-1"><img src="img/sert3.jpg"  alt="sert3" /></a></div>
+                  </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="img/sert4-lightbox.jpg" title="sert4"  class="html5lightbox" data-group="amazingcarousel-1"><img src="img/sert4.jpg"  alt="sert4" /></a></div>
+                   </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="img/sert5-lightbox.jpg" title="sert5"  class="html5lightbox" data-group="amazingcarousel-1"><img src="img/sert5.jpg"  alt="sert5" /></a></div>
+                  </div>
+                </li>
+
+                 <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="img/sert1-lightbox.jpg" title="sert1"  class="html5lightbox" data-group="amazingcarousel-1"><img src="img/sert1.jpg"  alt="sert1" /></a></div>
+                  </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="img/sert2-lightbox.jpg" title="sert2"  class="html5lightbox" data-group="amazingcarousel-1"><img src="img/sert2.jpg"  alt="sert2" /></a></div>
+                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="img/sert3-lightbox.jpg" title="sert3"  class="html5lightbox" data-group="amazingcarousel-1"><img src="img/sert3.jpg"  alt="sert3" /></a></div>
+                  </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="img/sert4-lightbox.jpg" title="sert4"  class="html5lightbox" data-group="amazingcarousel-1"><img src="img/sert4.jpg"  alt="sert4" /></a></div>
+                   </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="img/sert5-lightbox.jpg" title="sert5"  class="html5lightbox" data-group="amazingcarousel-1"><img src="img/sert5.jpg"  alt="sert5" /></a></div>
+                  </div>
+                </li>
+
+
+                 </ul>
+            <div class="amazingcarousel-prev"></div>
+            <div class="amazingcarousel-next"></div>
+        </div>
+        <div class="amazingcarousel-nav"></div>
+       
+    </div>
+
+				<input type="button" id="btn5" value="ХОТИТЕ ЕЩЕ КРУЧЕ? ЖМИТЕ СИЛЬНЕЕ!">
+			</div>
+	</div>
+	<div id="block6">
+		<div id="top_block6">
+			<div class="wrapper">
+				<div class="indent">	
+						<h2>НАШИ <span>ЦЕНЫ</span></h2>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<h2>ПРИМЕРЫ ГОТОВЫХ ПАКЕТОВ ПРИ ОРГАНИЗАЦИИ МЕРОПРИЯТИЯ «ПОД КЛЮЧ»<span>*</span></h2>
+			<div id="product">
+				<div id="one_product">
+					<div class="head_prod"><p>ТРОЙКА</p></div>
+
+					<div class="price"><p>ЗООО РУБ./ЧЕЛ.</p></div>
+
+					<div class="first_pun"><p>3 встречи</p></div>
+					<div class="pun"><p>3 варианта программы</p></div>
+					<div class="pun"><p>3 координатора/аниматора</p></div>
+					<div class="pun"><p>1 фотограф</p></div>
+					<div class="pun"><p>3 рюкзака реквизита</p></div>
+					<input type="button" id="btn6" value="ХОТИМ">
+				</div>
+				<div id="two_product">
+					<div class="head_prod"><p>ТРОЙКА</p></div>	
+					<div class="price"><p>7ООО РУБ./ЧЕЛ.</p></div>	
+					<div class="first_pun"><p>мин. 7 встреч</p></div>
+					<div class="pun"><p>мин. 7 вариантов программы</p></div>
+					<div class="pun"><p>7 координаторов/аниматоров</p></div>
+					<div class="pun"><p>7 чел. с камерами <br>
+(фото и видео)</p></div>
+					<div class="pun"><p>7 чемоданов реквизита</p></div>		
+					<input type="button" id="btn7" value="ХОТИМ">	
+				</div>
+				<div id="three_product">
+					<div class="head_prod"><p>ТРОЙКА</p></div>
+					<div class="price"><p>10ООО РУБ./ЧЕЛ.</p></div>
+					<div class="first_pun"><p>неограниченое кол-во встреч</p></div>
+					<div class="pun"><p>10 вариантов программы</p></div>
+					<div class="pun"><p>10 координаторов (артистов/аниматора)</p></div>
+					<div class="pun"><p>10 чел. с камерами
+(фото и видео)</p></div>
+					<div class="pun"><p>10 чемоднов  реквизита</p></div>
+					<input type="button" id="btn8" value="ХОТИМ">
+				</div>
+			</div>
+			<h3><span>*</span> При организации мероприятия “под ключ” вам НЕ ОБЯЗАТЕЛЬНО заказывать все услуги у нас.<br>
+Часть из них может быть привлечена вами со стороны (площадка, знакомые, другие агентства).</h3>
+		</div>
+	</div>
+	<div id="block7">
+		<div id="top_block7">
+			<div class="wrapper">
+				<div class="indent">	
+						<h2>НАШЕ <span>ПОРТФОЛИО</span></h2>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<h2 class="title"><span>ТОП-5</span> СЦЕНАРИЕВ ПРАЗДНИКОВ «ПОД КЛЮЧ»</h2>
+			<ul>
+			<li>
+			<div class="img"><img src="img/port1.jpg" width="232" height="287" alt="port1"></div>
+				<div class="name"><p>Вечеринка в стиле<br>«Гэтсби»<br>
+				(Чикаго 30-х, Мафия,<br> Gangsters Party)</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>99 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port2.jpg" width="232" height="287" alt="port2"></div>
+				<div class="name"><p>Вечеринка в стиле <br>«Оскар» (Кинопремия,<br> Movie Awards,<br> Hollywood Party)</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>99 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port3.jpg" width="232" height="287" alt="port3"></div>
+				<div class="name"><p>Вечеринка в стиле <br>«Стимпанк»<br>
+(Эпоха Великих <br>Изобретений)</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>99 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port4.jpg" width="232" height="287" alt="port4"></div>
+				<div class="name"><p>Вечеринка в стиле<br> «Антисанкции»<br>(Назад в СССР,<br>Велком ту Раша)</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>99 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port5.jpg" width="232" height="287" alt="port5"></div>
+				<div class="name"><p>Вечеринка в стиле<br> «Интеллектуальное <br>казино» (Элитарный <br>клуб, Что? Где? Когда?)</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>99 990 руб.</p></div>
+			</li>
+			</ul>
+
+			<div class="line_port"></div>
+
+
+				<h2 class="title"><span>ТОП-5</span> ИГР И АТТРАКЦИОНОВ НА ВАШ ПРАЗДНИК»</h2>
+			<ul>
+			<li>
+			<div class="img"><img src="img/port6.jpg" width="232" height="287" alt="port6"></div>
+				<div class="name"><p>Зеркальный стол<br>для игры<br>«Что? Где? Когда?»<br></p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>29 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port7.jpg" width="232" height="287" alt="port7"></div>
+				<div class="name"><p>Выездное казино<br> (рулетка, покер, блэк-<br>джек)<br></p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>19 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port8.jpg" width="232" height="287" alt="port8"></div>
+				<div class="name"><p>Аттракцион<br> виртуальной<br> реальности</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>9 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port9.jpg" width="232" height="287" alt="port9"></div>
+				<div class="name"><p>X-BOX Kinekt<br>с плазмой диагональю<br>50 дюймов</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>19 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port10.jpg" width="232" height="287" alt="port10"></div>
+				<div class="name"><p>Набор настольных игр<br>
+и головоломок</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>9 990 руб.</p></div>
+			</li>
+			</ul>
+
+			<div class="line_port"></div>
+
+
+				<h2 class="title"><span>ТОП-5</span> ВЫЕЗДНЫХ КВЕСТОВ НА ВАШ ПРАЗДНИК</h2>
+			<ul>
+			<li>
+			<div class="img"><img src="img/port11.jpg" width="232" height="287" alt="port11"></div>
+				<div class="name"><p>Квест «Выбраться из<br> комнаты» в вашем<br> офисе/доме</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>99 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port12.jpg" width="232" height="287" alt="port12"></div>
+				<div class="name"><p>Мобильный квест<br>
+«The Куб»</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>49 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port13.jpg" width="232" height="287" alt="port13"></div>
+				<div class="name"><p>Первый в мире<br> передвижной<br> автобус-квест</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>9 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port14.jpg" width="232" height="287" alt="port14"></div>
+				<div class="name"><p>Живой<br> квест-перфоманс<br>
+с актерами</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>19 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port15.jpg" width="232" height="287" alt="port15"></div>
+				<div class="name"><p>Квеструм-розыгрыш<br> «Детектив-шоу»</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>49 990 руб.</p></div>
+			</li>
+			</ul>
+
+			<div class="line_port"></div>
+
+
+				<h2 class="title"><span>ТОП-5</span> СПЕЦЭФФЕКТОВ НА ВАШ ПРАЗДНИК</h2>
+			<ul>
+			<li>
+			<div class="img"><img src="img/port16.jpg" width="232" height="287" alt="port16"></div>
+				<div class="name"><p>Пневмофейерверк</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>5 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port17.jpg" width="232" height="287" alt="port17"></div>
+				<div class="name"><p>Тяжелый дым</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>19 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port18.jpg" width="232" height="287" alt="port18"></div>
+				<div class="name"><p>Пиротехнические<br> фонтаны</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>9 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port19.jpg" width="232" height="287" alt="port19"></div>
+				<div class="name"><p>Светодиодные<br>шарики</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>9 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port20.jpg" width="232" height="287" alt="port20"></div>
+				<div class="name"><p>Фейерверк</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>19 990 руб.</p></div>
+			</li>
+			</ul>
+
+			<div class="line_port"></div>
+
+
+				<h2 class="title"><span>ТОП-5</span> ПРИНТ- «ФИШЕК» НА ВАШ ПРАЗДНИК</h2>
+			<ul>
+			<li>
+			<div class="img"><img src="img/port21.jpg" width="232" height="287" alt="port21"></div>
+				<div class="name"><p>Коллективная <br>фотокартина с печатью<br> мини-фотографий</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>12 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port22.jpg" width="232" height="287" alt="port22"></div>
+				<div class="name"><p>Шуточные<br>сертификаты (10 шт.)</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>9 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port23.jpg" width="232" height="287" alt="port23"></div>
+				<div class="name"><p>Пресс-волл<br>с ковровой дорожкой</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>12 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port24.jpg" width="232" height="287" alt="port24"></div>
+				<div class="name"><p>Выездная <br>ретро-фотостудия<br>с моментальной<br> печатью</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>29 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port25.jpg" width="232" height="287" alt="port25"></div>
+				<div class="name"><p>Объемные буквы<br>и ростовые<br>фигуры звезд</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>9 990 руб.</p></div>
+			</li>
+			</ul>
+
+			<div class="line_port"></div>
+
+				<h2 class="title"><span>ТОП-5</span> ВИДЕО-РОЗЫГРЫШЕЙ НА ВАШ ПРАЗДНИК</h2>
+			<ul>
+			<li>
+			<div class="img"><img src="img/port1.jpg" width="232" height="287" alt="port1"></div>
+				<div class="name"><p>«Подставное<br>интервью»</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>29 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port2.jpg" width="232" height="287" alt="port2"></div>
+				<div class="name"><p>«Подставные руки»</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>29 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port3.jpg" width="232" height="287" alt="port3"></div>
+				<div class="name"><p>«Подставные<br>картинки»</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>29 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port4.jpg" width="232" height="287" alt="port4"></div>
+				<div class="name"><p>«Поздравление<br>звезд»</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>19 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port5.jpg" width="232" height="287" alt="port5"></div>
+				<div class="name"><p>Фильм о герое <br>(трейлер)</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>9 990 руб.</p></div>
+			</li>
+			</ul>
+
+			<div class="line_port"></div>
+
+				<h2 class="title"><span>ТОП-5</span> АРТИСТОВ И ШОУ-ПРОГРАММ НА ВАШ ПРАЗДНИК</h2>
+			<ul>
+			<li>
+			<div class="img"><img src="img/port31.jpg" width="232" height="287" alt="port31"></div>
+				<div class="name"><p>Охранник-<br>иллюзионист</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>19 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port32.jpg" width="232" height="287" alt="port32"></div>
+				<div class="name"><p>Танцующие<br>официанты</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>29 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port33.jpg" width="232" height="287" alt="port33"></div>
+				<div class="name"><p>Бармен-шоу</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>19 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port34.jpg" width="232" height="287" alt="port34"></div>
+				<div class="name"><p>Шоу трансформации <br>костюмов</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>19 990 руб.</p></div>
+			</li>
+
+			<li>
+			<div class="img"><img src="img/port35.jpg" width="232" height="287" alt="port35"></div>
+				<div class="name"><p>Падение официанта<br>с тортом</p></div>
+				<div class="descr"><p>Описание</p></div>
+				<div class="price"><p>12 990 руб.</p></div>
+			</li>
+			</ul>
+			<input type="button" id="btn9" value="ЭТО ПРОСТО ПРАЗДНИК КАКОЙ-ТО!">
+			
+		</div>
+	</div>
+	<div id="block8">
+	<div id="maps">
+	<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=NtpSQvdNoCFCYs0yFWFLod4KPClu68S6&width=100%&height=564&lang=ru_RU&sourceType=constructor"></script></div>
+		<div id="wr" class="wrapper">
+			<div id="contacts">
+				<div id="title_cont"><div class="indent"><h2>НАШИ <span>КОНТАКТЫ</span></h2></div></div>
+				<div id="descr_cont"><p class="title">Ждем Вас в нашем офисе<br>с 10:00 до 20:00 с понедельника по пятницу</p>
+					<ul class="ul_cont">
+						<li><img src="img/icon_home.png" width="33" height="33" alt="icon_home"><p>МОСКВА, МОСФИЛЬМОВСКАЯ, 28</p></li>
+						<li><img src="img/icon_phone.png" width="33" height="33" alt="icon_phone"><p>+7 (495) 741 16 25</p></li>
+						<li><img src="img/icon_mail.png" width="33" height="33" alt="icon_mail"><p>7411625@mail.ru </p></li>
+					</ul>
+
+					<ul class="socset">
+					<li><a href=""><img src="img/icon_fb_black.png" width="33" height="33" alt="fb"></a></li>
+					<li><a href=""><img src="img/icon_vk_black.png" width="33" height="33" alt="vk"></a></li>
+					<li><a href=""><img src="img/icon_inst_black.png" width="33" height="33" alt="inst"></a></li>
+				</ul>
+				</div>
+			</div>
+
+			
+		</div>
+	</div>
+	<div id="block9">
+		<div class="wrapper">
+		<nav id="menu">
+			<ul>
+			<li><a href="#block2">УСЛУГИ</a></li>
+			<li><a href="#block3">О НАС</a></li>
+			<li><a href="#block4">ГАРАНТИИ</a></li>
+			<li><a href="#block5">ОТЗЫВЫ</a></li>
+			<li><a href="#block6">ЦЕНЫ</a></li>
+			<li><a href="#block7">ПОРТФОЛИО</a></li>
+			<li><a href="#block8">КОНТАКТЫ</a></li>
+			</ul>
+		</nav>
+
+			<p class="copyrate">© 2005 - 2016 / Конструкторское Бюро Праздников. Все права защищены<br>
+Privacy policy / Политика конфиденциальности</p>
+		</div>
+	</div>	
+</div>
+
+</body>
+</html>

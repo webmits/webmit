@@ -1,0 +1,60 @@
+div.ic_myCarousel {
+	margin: 0 auto;
+	clear:right;
+}
+
+.ic_myCarousel .ic_button {
+	float: left;
+	
+	line-height: 25px;
+	margin: 0px 4px 0 7px;
+	height: 84px;
+	width: 112px;
+	
+	background: #ddd;
+}
+.infiniteCarousel {
+	margin: 0 auto !important;
+}
+.ic_wrapper {
+	width: 498px  !important;
+	
+}
+.ic_myCarousel .ic_active {
+	border: 2px solid #f35d49;
+	height: 80px;
+	width: 108px;
+	
+}
+.ic_peek_padding {
+	
+}
+
+.ic_myCarousel .ic_active  {
+	border: 2px solid #f35d49;
+	height: 80px;
+	width: 108px;
+}
+.ic_captions {
+	z-index: 1;
+    position: absolute;
+    background: #30659f;
+    padding: 8px 16px;
+    width: 224px;
+    height: 40px;
+    margin-top: 290px;
+    margin-left: 10px;
+    color: #ffffff;
+    font: 14px 'GillSansSemiBold';
+}
+
+.ic_captions span {
+	background: #30659f;
+
+
+	    color:#ffffff;
+	    font:14px 'GillSans';
+}
+.options {
+	font-size: 16px;
+}

@@ -1,0 +1,52 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+div.ic_myCarousel {
+	margin: 100px auto 0 auto;
+	clear:right;
+}
+.ic_myCarousel .ic_button {
+	float: left;
+	height: 47px;
+	line-height: 47px;
+	margin: 0 4px 0 2px;
+	width: 70px;
+	border: 1px solid #eee;
+	background: #ddd;
+}
+.ic_myCarousel .ic_thumbnails {
+	display: inline-block;
+}
+
+
+/* keep this after the ic_button code for proper border coloring */		
+.ic_myCarousel2 .ic_active, .ic_myCarousel .ic_active, .ic_vidCarousel .ic_active  {
+	background: #fff;
+	border: 1px solid #faa;
+}
+.ic_caption {
+	opacity: .6;
+	background: #fff;
+	font-size: 12px;
+	font-family: arial;
+	padding: 4px 8px;
+	width: auto;
+}
+
+div p {
+    color: #333333;
+    font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+    font-size: 18px;
+    text-shadow: 0 1px 1px #C9C9C9;
+}
+.options {
+	font-size: 16px;
+}
+div.infiniteCarousel {
+	margin: 100px auto 0 auto;
+	-moz-box-shadow: 0px 0px 10px #333;
+	-webkit-box-shadow:  0px 0px 10px #333;
+	box-shadow:  0px 0px 10px #333;
+	clear:right;
+}

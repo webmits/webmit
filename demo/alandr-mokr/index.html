@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta name="author" content="Мальков Дмитрий" />
+		<meta name="copyright" content="webmit.ru" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/fonts.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  		<link rel="stylesheet" type="text/css" href="css/style2.css" />
+  		<link rel="stylesheet" href="magnific-popup/magnific-popup.css" />
+  		<link type="text/css" href="css/base.css" rel="stylesheet" />
+
+		<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+		
+		<script src="js/jquery.maskedinput.js" type="text/javascript"></script>			
+
+	
+	  	<script src="js/plugins.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script src="magnific-popup/jquery.magnific-popup.min.js"></script>		
+        <script type="text/javascript" src="js/jquery.pikachoose.js"></script>
+		<script type="text/javascript" src="js/jquery.touchwipe.min.js"></script>
+		
+		<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+    	ymaps.ready(init);
+
+function init () {
+    var myMap = new ymaps.Map('map', {
+            center: [55.726837, 37.678424],
+            zoom: 17,
+            controls: []
+        }),
+
+        // Создадим пользовательский макет ползунка масштаба.
+        ZoomLayout = ymaps.templateLayoutFactory.createClass("<div>" +
+                "<div id='zoom-in' class='btn'><i class='icon-plus'></i></div><br>" +
+                "<div id='zoom-out' class='btn'><i class='icon-minus'></i></div>" +
+            "</div>", {
+
+            // Переопределяем методы макета, чтобы выполнять дополнительные действия
+            // при построении и очистке макета.
+            build: function () {
+                // Вызываем родительский метод build.
+                ZoomLayout.superclass.build.call(this);
+
+                // Привязываем функции-обработчики к контексту и сохраняем ссылки
+                // на них, чтобы потом отписаться от событий.
+                this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
+                this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this);
+
+                // Начинаем слушать клики на кнопках макета.
+                $('#zoom-in').bind('click', this.zoomInCallback);
+                $('#zoom-out').bind('click', this.zoomOutCallback);
+            },
+
+            clear: function () {
+                // Снимаем обработчики кликов.
+                $('#zoom-in').unbind('click', this.zoomInCallback);
+                $('#zoom-out').unbind('click', this.zoomOutCallback);
+
+                // Вызываем родительский метод clear.
+                ZoomLayout.superclass.clear.call(this);
+            },
+
+            zoomIn: function () {
+                var map = this.getData().control.getMap();
+                // Генерируем событие, в ответ на которое
+                // элемент управления изменит коэффициент масштабирования карты.
+                this.events.fire('zoomchange', {
+                    oldZoom: map.getZoom(),
+                    newZoom: map.getZoom() + 1
+                });
+            },
+
+            zoomOut: function () {
+                var map = this.getData().control.getMap();
+                this.events.fire('zoomchange', {
+                    oldZoom: map.getZoom(),
+                    newZoom: map.getZoom() - 1
+                });
+            }
+        }),
+       
+        zoomControl = new ymaps.control.ZoomControl({ options: { layout: ZoomLayout } });
+
+    myMap.controls.add(zoomControl);
+     var myPlacemark = new ymaps.Placemark(
+			// Координаты метки
+			[55.726837, 37.678424]        
+			);
+ 
+		// Добавление метки на карту
+		myMap.geoObjects.add(myPlacemark);
+}
+
+
+    </script>
+
+
+
+	<title>Проектирование и монтаж навесных конструкций по всей РФ</title>
+</head>
+<body>
+
+			<div class="popup" style="">
+			<div class="bg_popup"></div>
+
+			<div id="popup_download" class="popup_download">
+			<div class="close"></div>
+				<div class="formMain">
+						<h2>Заполните форму</h2>
+						
+						<div class="icon_name"></div>
+						<div class="icon_phone"></div>
+						<div class="icon_mail"></div>
+						<input type="email" class="name" onfocus="placeholder='';" onblur="placeholder='Ваше имя';"  id="name3" name="name" placeholder="Ваше имя">
+						<input type="text" class="phone" id="phone3" onfocus="placeholder='';" onblur="placeholder='Ваш телефон*';"  name="phone" placeholder="Ваш телефон*">				
+						<input type="text" class="email" id="email3" onfocus="placeholder='';" onblur="placeholder='Ваш e-mail';"  name="email" placeholder="Ваш e-mail">	
+						<input type="button" class="btn" id="btn3" value="ОТПРАВИТЬ заявку">
+
+						<p class="private">Ваши контактные данные в безопасности<br>
+							и не будут переданы третьим лицам</p>
+						<p class="required">* — обязательно к заполнению</p>
+						
+						
+					</div>
+			</div>
+
+			<!--блок объекты-->
+				<div id="bg_popup_object-1" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+						<div id="bg_popup_object-2" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+						<div id="bg_popup_object-3" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+						<div id="bg_popup_object-4" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+						<div id="bg_popup_object-5" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+						<div id="bg_popup_object-6" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+						<div id="bg_popup_object-7" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+						<div id="bg_popup_object-8" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+						<div id="bg_popup_object-9" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+					<div id="bg_popup_object-10" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+					<div id="bg_popup_object-11" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+
+					<div id="bg_popup_object-12" class="bg_popup_object">
+					<div class="close"></div>
+					<img class="img" src="img/img1.jpg" alt="">
+					<div class="content">
+							<h3>Штаб народного фронта в Москве</h3>
+
+			  				<p class="name">Заказчик:</p>
+							<p class="text">ООО «Стройкомплект»</p>
+
+							<p class="name">Адрес объекта:</p>
+							<p class="text">г. Москва, ул. Мосфильмовская, 40а</p>
+
+							<p class="name">Выполненные работы: </p>
+							<p class="text">Изготовление и монтаж светопрозрачного фасада и зенитного фонарям</p>
+
+							<p class="name">Объем:</p>
+							<p class="text">1200 м2</p>
+
+							<p class="name">Срок исполнения: </p>
+							<p class="text">3 месяца</p>			  				
+					</div>
+					</div>
+				</div>
+			
+
+
+	<div id="wrapper">
+		<div id="header">
+			<div id="top">
+				<div class="wrapper">
+					<div id="logo"><a href="#"><img src="img/logo.png"></a></div>
+					<div class="slog"><p>Проектирование и монтаж<br>навесных конструкций по всей РФ</p></div>
+					<div class="address"><p>г. Москва, ул. Сосинская, д.43</p></div>
+					<div class="mail"><p>alandr@alandr.ru</p></div>
+					<div class="phone"><p>+ 7 (495) 912-55-55</p></div>					
+					<div class="clr"></div>
+				</div>
+			</div>
+			<div id="bottom">
+				<div class="wrapper">
+				<div class="blockL">
+					<h1>Обновим Ваше здание<br>
+по технологии «Мокрого<br>
+фасада» за 15 дней</h1>
+					<div class="bg_pmp"><p>Утеплим фасад здания и сократим ваши расходы<br>
+на отопление и кондиционирование до 50%</p></div>
+
+					<ul class="oneclass">
+						<li><img src="img/icon1.png"><p><span>Гарантия на работы 10 лет<br> 
+с предоставлением тех. документации</span></p></li>
+						<li><img src="img/icon2.png"><p><span>12 лет на рынке фасадных работ,<br> 
+более 1 000 завершенных объектов</span></p></li>
+						
+					</ul>
+				</div>
+				<div class="blockR">
+					<div id="form" enctype="multipart/form-data"  class="formMain">
+					<div class="ellipse"><p>В ДЕНЬ<br>обращения!</p></div>
+						<h2>Оставьте заявку</h2>
+						<p>на получение сметы</p>
+						<div class="icon_name"></div>
+						<div class="icon_phone"></div>
+						<div class="icon_mail"></div>
+						<div class="icon_area"></div>
+						<input type="email" class="name" id="name" name="name" onfocus="placeholder='';" onblur="placeholder='Ваше имя';"  placeholder="Ваше имя">
+						<input type="text" class="phone" id="phone" onfocus="placeholder='';" onblur="placeholder='Ваш телефон*';"  name="phone" placeholder="Ваш телефон*">				
+						<input type="text" class="email" id="email" onfocus="placeholder='';" onblur="placeholder='Ваш e-mail';"  name="email" placeholder="Ваш e-mail">	
+						<input type="text" class="area" id="area" onfocus="placeholder='';" onblur="placeholder='Площадь здания';"  name="area" placeholder="Площадь здания">					
+						<input type="button" class="btn" id="btn" value="ОТПРАВИТЬ заявку"/>
+
+						<p class="private">Ваши контактные данные в безопасности<br>
+							и не будут переданы третьим лицам</p>
+						<p class="required">* — обязательно к заполнению</p>
+						
+						
+					</div>
+					<div class="clr"></div>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="block2">
+			<div class="wrapper">
+				<h2>Что мы делаем</h2>
+					<ul id="plus">
+				<li>
+				<div class="img"><img src="img/icon_project.png"></div>
+				<p class="title">Проектируем</p>
+				<p class="text">Собственный штат<br>
+инженеров и конструкторов</p>
+				</li>
+
+				<li>
+				<div class="img"><img src="img/icon_material.png"></div>
+				<p class="title">Подбираем материалы</p>
+				<p class="text">Стремимся к удешевлению<br>
+вашего проекта</p>
+				</li>
+
+				<li>
+				<div class="img"><img src="img/icon_object.png"></div>
+				<p class="title">Визуализируем объект</p>
+				<p class="text">Качественная 3d-визуализация<br>
+будущего вентфасада</p>
+				</li>
+
+				<li>
+				<div class="img"><img src="img/icon_montage.png"></div>
+				<p class="title">Производим монтаж</p>
+				<p class="text">Аттестованные специалисты,<br> соблюдение ТБ</p>
+				</li>
+				</ul>
+<div class="clr"></div>
+				<h2>Выполненные объекты</h2>
+
+
+				<ul id="true_object">
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="icon_slide1" src="img/img_object1.jpg" alt="img_object1">		
+								</div>
+								<div  id="img1_catalog" class="back">
+								
+								<div class="bg" num="1"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>								
+								</div>
+							</div>
+					</div>
+				</li>
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="icon_slide1" src="img/img_object2.jpg" alt="img_object2">		
+								</div>
+								<div  id="img2_catalog" class="back">
+								<img class="img2_catalog" src="img/img_object2.jpg" alt="img_object2">	
+								<div class="bg" num="2"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>									
+								</div>
+							</div>
+					</div>
+				</li>
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="icon_slide1" src="img/img_object3.jpg" alt="img_object3">		
+								</div>
+								<div id="img3_catalog"  class="back">
+								<img class="img3_catalog" src="img/img_object3.jpg" alt="img_object3">	
+								<div class="bg" num="3"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>									
+								</div>
+							</div>
+					</div>
+				</li>
+
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="icon_slide4" src="img/img_object4.jpg" alt="img_object4">		
+								</div>
+								<div id="img4_catalog"  class="back">
+								<img class="img4_catalog" src="img/img_object4.jpg" alt="img_object4">	
+								<div class="bg" num="4"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>								
+								</div>
+							</div>
+					</div>
+				</li>
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="icon_slide1" src="img/img_object5.jpg" alt="img_object5">		
+								</div>
+								<div id="img5_catalog" class="back">
+								<img class="img5_catalog" src="img/img_object5.jpg" alt="img_object5">	
+								<div class="bg" num="5"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>							
+								</div>
+							</div>
+					</div>
+				</li>
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="icon_slide1" src="img/img_object6.jpg" alt="img_object6">		
+								</div>
+								<div id="img6_catalog" class="back">
+								<img class="img6_catalog" src="img/img_object6.jpg" alt="img_object6">	
+								<div class="bg" num="6"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>							
+								</div>
+							</div>
+					</div>
+				</li>
+
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="img7_catalog" src="img/img_object7.jpg" alt="img_object7">		
+								</div>
+								<div id="img7_catalog" class="back">
+								<img class="img7_catalog" src="img/img_object7.jpg" alt="img_object7">	
+								<div class="bg" num="7"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>								
+								</div>
+							</div>
+					</div>
+
+				</li>
+
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="img8_catalog" src="img/img_object8.jpg" alt="img_object8">		
+								</div>
+								<div id="img8_catalog" class="back">
+								<img class="img8_catalog" src="img/img_object8.jpg" alt="img_object8">	
+								<div class="bg" num="8"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>								
+								</div>
+							</div>
+					</div>
+					
+				</li>
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="img9_catalog" src="img/img_object9.jpg" alt="img_object9">		
+								</div>
+								<div id="img9_catalog" class="back">
+								<img class="img9_catalog" src="img/img_object9.jpg" alt="img_object9">	
+								<div class="bg" num="9"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>								
+								</div>
+							</div>
+					</div>
+					
+				</li>
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="img10_catalog" src="img/img_object10.jpg" alt="img_object10">		
+								</div>
+								<div id="img7_catalog" class="back">
+								<img class="img10_catalog" src="img/img_object10.jpg" alt="img_object10">	
+								<div class="bg" num="10"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>								
+								</div>
+							</div>
+					</div>
+					
+				</li>
+				<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="img11_catalog" src="img/img_object11.jpg" alt="img_object11">		
+								</div>
+								<div id="img11_catalog" class="back">
+								<img class="img11_catalog" src="img/img_object11.jpg" alt="img_object11">	
+								<div class="bg" num="11"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>								
+								</div>
+							</div>
+					</div>
+					
+				</li>
+
+					<li>
+				  <div class="flip-container" tabindex="0"  ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div id="icon_slide1" class="front">
+									<img class="img12_catalog" src="img/img_object12.jpg" alt="img_object12">		
+								</div>
+								<div id="img12_catalog" class="back">
+								<img class="img12_catalog" src="img/img_object12.jpg" alt="img_object12">	
+								<div class="bg" num="12"><p class="name">Марриотт<br>Новый Арбат</p><div class="red_line"></div><p class="kvm">1200 м<sup>2</sup></p></div>									
+								</div>
+							</div>
+					</div>
+					
+				</li>
+			</ul>
+			<div class="clr"></div>
+				<ul id="bg_plus">
+					<li>
+						<img src="img/icon_portfolio.png"><p>Более 1 000 завершенных <br>объектов в портфолио</p>
+					</li>
+
+					<li>
+						<img src="img/icon_norm.png"><p>Все объекты выполнены в соответствии<br>с установленными нормами строительства</p>
+					</li>
+				</ul>
+
+				
+				</div>
+			</div>
+		
+
+
+		<div id="block3">
+			<div class="wrapper">
+				<h2>Применение мокрых фасадов</h2>
+
+				<ul>
+					<li><div class="img"><img src="img/icon_facade1.png"></div><p>Устройство фасада</p></li>
+					<li><div class="img"><img src="img/icon_facade2.png"></div><p>Капитальный<br>ремонт фасада</p></li>
+					<li><div class="img"><img src="img/icon_facade3.png"></div><p>Утепление фасада</p></li>
+					<li><div class="img"><img src="img/icon_facade4.png"></div><p>Реконструкция<br>и реставрация</p></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="block4">
+			<div class="wrapper">
+			<h2>Из чего состоит мокрый фасад</h2>
+
+				<div class="img_device"></div>
+					<div class="text1">
+					<p>Утеплитель</p>
+					</div>
+
+					<div class="text2">
+					<p>Клеевой состав</p>
+					</div>
+
+					<div class="text3">
+					<p>Армированный слой</p>
+					</div>
+
+					<div class="text4">
+					<p>Фасадный дюпель<br>
+для крепления утеплителя</p>
+					</div>
+
+					<div class="text5">
+					<p>Декоративное покрытие</p>
+					</div>
+				</div>
+		</div>
+		<div id="block5">
+			<div class="wrapper">
+
+				<div class="bgtext">
+					<p>Вентиляционные фасады<br>увеличивают срок эксплуатации<br>здания на 20-25%</p>
+				</div>
+
+				<ul>
+					<li><img src="img/check.png"><p>Защищают здание<br>от влаги и шума</p></li>
+					<li><img src="img/check.png"><p>Современный внешний<br>вид фасада здания</p></li>
+					<li><img src="img/check.png"><p>Снижают затраты<br>на отопление до 30%</p></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="block6">
+			<div class="wrapper">
+				<h2>Варианты облицовки мокрого фасада</h2>
+
+				<ul>
+					<li><div class="img"><img src="img/img_var1.jpg"></div><p>Декоративная<br>
+штукатурка</p></li>
+					<li><div class="img"><img src="img/img_var2.jpg"></div><p>Шпатлевка,<br>
+окраска</p></li>
+					<li><div class="img"><img src="img/img_var3.jpg"></div><p>Облицовка <br>
+керамогранитом</p></li>
+					<li><div class="img"><img src="img/img_var4.jpg"></div><p>Облицовка<br>
+натуральным камнем</p></li>
+				</ul>
+			</div>
+
+		</div>
+
+		
+
+		<div id="block7">
+			<div class="wrapper">
+				<div class="blockL">
+					<h2>Мы используем материалы,<br>соответствующие ГОСТ<br>стандартам от производителя</h2>
+					<ul class="oneclass">
+						<li><img src="img/icon_sert.png"><p>Предоставляем сертификаты качества<br>на материал, а также техническую<br>и исполнительную документацию</p></li>
+						
+					</ul>
+				</div>
+					<div class="blockR">
+					<div id="form" enctype="multipart/form-data"  class="formMain">
+					<div class="ellipse"><p>В ДЕНЬ<br>обращения!</p></div>
+						<h2>Оставьте заявку</h2>
+						<p>на получение сметы</p>
+						<div class="icon_name"></div>
+						<div class="icon_phone"></div>
+						<div class="icon_mail"></div>
+						<div class="icon_area"></div>
+						<input type="email" class="name" id="name2" onfocus="placeholder='';" onblur="placeholder='Ваше имя';"  name="name" placeholder="Ваше имя">
+						<input type="text" class="phone" id="phone2" onfocus="placeholder='';" onblur="placeholder='Ваш телефон*';"  name="phone" placeholder="Ваш телефон*"><input type="text" class="email" id="email2" onfocus="placeholder='';" onblur="placeholder='Ваш e-mail';" name="email" placeholder="Ваш e-mail">	
+						<input type="text" class="area" id="area2" onfocus="placeholder='';" onblur="placeholder='Площадь здания';"  name="area" placeholder="Площадь здания">					
+						<input type="button" class="btn" id="btn2" value="ОТПРАВИТЬ заявку"/>
+
+						<p class="private">Ваши контактные данные в безопасности<br>
+							и не будут переданы третьим лицам</p>
+						<p class="required">* — обязательно к заполнению</p>
+						
+						
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+		</div>
+		<div id="block8">
+			<div class="wrapper">
+				<h2>Процесс монтажа</h2>
+
+				<ul id="montage">
+					<li>
+					<div class="rectangle"><p>1</p></div>
+					<div class="img"><img src="img/img_montage1.jpg"></div>
+					<p><span>Установка цокольного<br> профиля</span> для защиты нижней<br> части утеплителя</p>
+					</li>
+						<li class="icon_next"></li>
+					<li>
+					<div class="rectangle"><p>2</p></div>
+					<div class="img"><img src="img/img_montage2.jpg"></div>
+					<p><span>Грунтование основания фасада,<br> откосов окон, дверей</span><br> проникающей грунтовкой</p>
+					</li>
+						<li class="icon_next"></li>
+					<li>
+					<div class="rectangle"><p>3</p></div>
+					<div class="img"><img src="img/img_montage3.jpg"></div>
+					<p><span>Приклеивание плит утеплителя</span><br>способом вязки и соблюдением<br> зазоров</p>
+					</li>
+
+					<li>
+					<div class="rectangle"><p>4</p></div>
+					<div class="img"><img src="img/img_montage4.jpg"></div>
+					<p><span>Закрепление плит</span><br> фасадными дюбелями</p>
+					</li>
+						<li class="icon_next"></li>
+					<li>
+					<div class="rectangle"><p>5</p></div>
+					<div class="img"><img src="img/img_montage5.jpg"></div>
+					<p><span>Создание защитного<br> армированного<br>слоя</span> с грунтованием</p>
+					</li>
+						<li class="icon_next"></li>
+					<li>
+					<div class="rectangle"><p>6</p></div>
+					<div class="img"><img src="img/img_montage6.jpg"></div>
+					<p><span>Нанесение декоративной<br> отделки</span> из штукатурки<br>или облицовочных плит</p>
+					</li>
+				</ul>
+
+				<div class="clr"></div>
+				<div class="garant">
+					<h3>Гарантия от промерзания стен здания 10 лет!</h3>
+					<p>Соблюдаем технологии монтажа и выдерживание технологических<br>
+					перерывов при нанесении штукатурных и лако-красочных материалов</p>
+				</div>
+
+				<h2>От вашей заявки до начала производства<br>
+работ <span>всего 10 дней</span></h2>
+
+<p class="etaps">Этапы работ по устройству мокрого фасада <span>по дням</span></p>
+
+<div id="page-00" class="wr wr_all">
+<div data-src="img/bg19.jpg" class="wr wr19 lazy">
+      <div class="block">
+        <div class="choose-day clearfix">
+          <div class="icon icon-cursor"></div>          
+        </div>
+        <div class="paginator clearfix">
+          <a href="#">
+            <span>1</span>
+            <span>2</span>
+          </a>
+          <a href="#">
+            <span>3</span>
+            <span>4</span>
+          </a>
+           <a href="#">
+            <span>5</span>
+            <span>6</span>
+          </a>
+           <a href="#">
+            <span>7</span>
+            <span>8</span>
+          </a>
+           <a href="#">
+            <span>9</span>
+            <span>10</span>
+          </a>
+          <a class="last" href="#">
+            <span>Фасадные работы на объекте</span>  
+          </a>
+          <div class="next"><img src="img/icon_arrow.png"></div>
+
+
+        </div>
+        <div class="gallery-day">
+        	<img src="img/icon_calendar.png">
+          <span>День 1-2</span>
+        </div>
+        <a href="#" title="Предыдущяя" class="controls controls-left icon icon-arrow-left-white"></a>
+        <a href="#" title="Следующяя" class="controls controls-right icon icon-arrow-right-white"></a>
+        <div class="gallery">
+          <div class="items clearfix">
+            <div data-day="День 1-2" class="item">
+              <div class="gallery-title">Осмотр и оценка состояния фасада</div>
+              <div class="gallery-text">
+                
+                <ul>
+                	<li><img src="img/icon_check.png"><p>Выезд на объект инженера ПТО</p></li>
+                	<li><img src="img/icon_check.png"><p>Визуальный осмотр и оценка состояния фасада</p></li>
+                	<li><img src="img/icon_check.png"><p>Точный замер площади фасада и фотоотчет</p></li>
+                	<li><img src="img/icon_check.png"><p>Заполнение дефектной ведомости</p></li>
+                </ul>
+
+                <a class="download" ><img src="img/btn_download.png"></a>
+                
+              </div>
+            </div>
+            <div data-day="День 3-4" class="item">
+              <div class="gallery-title">Осмотр и оценка состояния фасада</div>
+               <div class="gallery-text">
+                
+                <ul>
+                	<li><img src="img/icon_check.png"><p>Выезд на объект инженера ПТО</p></li>
+                	<li><img src="img/icon_check.png"><p>Визуальный осмотр и оценка состояния фасада</p></li>
+                	<li><img src="img/icon_check.png"><p>Точный замер площади фасада и фотоотчет</p></li>
+                	<li><img src="img/icon_check.png"><p>Заполнение дефектной ведомости</p></li>
+                </ul>
+
+                <a class="download" ><img src="img/btn_download.png"></a>
+                
+              </div>
+            </div>
+            <div data-day="День 5-6" class="item">
+              <div class="gallery-title">Осмотр и оценка состояния фасада</div>
+               <div class="gallery-text">
+                
+                <ul>
+                	<li><img src="img/icon_check.png"><p>Выезд на объект инженера ПТО</p></li>
+                	<li><img src="img/icon_check.png"><p>Визуальный осмотр и оценка состояния фасада</p></li>
+                	<li><img src="img/icon_check.png"><p>Точный замер площади фасада и фотоотчет</p></li>
+                	<li><img src="img/icon_check.png"><p>Заполнение дефектной ведомости</p></li>
+                </ul>
+
+                <a class="download" ><img src="img/btn_download.png"></a>
+                
+              </div>
+            </div>
+            <div data-day="День 7-8" class="item">
+              <div class="gallery-title">Осмотр и оценка состояния фасада</div>
+               <div class="gallery-text">
+                
+                <ul>
+                	<li><img src="img/icon_check.png"><p>Выезд на объект инженера ПТО</p></li>
+                	<li><img src="img/icon_check.png"><p>Визуальный осмотр и оценка состояния фасада</p></li>
+                	<li><img src="img/icon_check.png"><p>Точный замер площади фасада и фотоотчет</p></li>
+                	<li><img src="img/icon_check.png"><p>Заполнение дефектной ведомости</p></li>
+                </ul>
+
+                <a class="download" ><img src="img/btn_download.png"></a>
+                
+              </div>
+            </div>
+             <div data-day="День 9-10" class="item">
+              <div class="gallery-title">Осмотр и оценка состояния фасада</div>
+              <div class="gallery-text">
+                
+                <ul>
+                	<li><img src="img/icon_check.png"><p>Выезд на объект инженера ПТО</p></li>
+                	<li><img src="img/icon_check.png"><p>Визуальный осмотр и оценка состояния фасада</p></li>
+                	<li><img src="img/icon_check.png"><p>Точный замер площади фасада и фотоотчет</p></li>
+                	<li><img src="img/icon_check.png"><p>Заполнение дефектной ведомости</p></li>
+                </ul>
+
+                <a class="download" ><img src="img/btn_download.png"></a>
+                
+              </div>
+            </div>
+
+            <div data-day="Фасадные работы на объекте" class="item">
+              <div class="gallery-title">Осмотр и оценка состояния фасада</div>
+              <div class="gallery-text">
+                
+                <ul>
+                	<li><img src="img/icon_check.png"><p>Выезд на объект инженера ПТО</p></li>
+                	<li><img src="img/icon_check.png"><p>Визуальный осмотр и оценка состояния фасада</p></li>
+                	<li><img src="img/icon_check.png"><p>Точный замер площади фасада и фотоотчет</p></li>
+                	<li><img src="img/icon_check.png"><p>Заполнение дефектной ведомости</p></li>
+                </ul>
+
+                <a class="download" ><img src="img/btn_download.png"></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+       
+       </div>
+      </div>
+    </div>
+			</div>
+		</div>
+
+		<div id="block9">
+			<div class="wrapper">
+				<div class="left">
+				<h2>У вас уже есть смета?</h2>
+
+				<p>Мы знаем рынок и специализируемся на<br>
+				 подборе <span>экономически выгодных<br>
+				 материалов</span> под ваш объект</p>
+				</div>
+
+				<div class="right">
+				<div class="plane"></div>
+					<div class="bg_info">
+						<p>Пришлите нам на почту смету<br>и мы <span>удешевим на 10-15% стоимость</span><br>мокрого фасада</p>
+
+						<p class="textmail">zakaz@alandr.ru</p>
+
+						<p class="or">или позвоните нам</p>
+
+						<p class="textphone"><img src="img/icon_phone1.png"> +7 (495) 308 46 81</p>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+		<div id="block10">
+				
+				<div id="about">
+				<h2>О компании</h2>
+
+				<p class="about"><span>Alandr Group</span> предоставляет услуги технического заказчика и генерального подрядчика при<br> реализации проектов в сфере строительства, ремонта и эксплуатации объектов коммерческой<br> недвижимости, административных зданий и промышленных сооружений с 2004 года</p>
+				</div>
+				<div class="wrapper">
+				<div id="bg_about">
+					<ul>
+						<li>
+							<img src="img/icon_about1.png">
+							<p class="title">Штат опытных<br>специалистов</p>
+							<p class="text">Более 35 сотрудников ИТР и<br> администрации</p>
+						</li>
+
+						<li>
+							<img src="img/icon_about2.png">
+							<p class="title">Сотрудники<br>славянской внешности</p>
+							<p class="text">Более 85% сотрудников на <br>линии граждане РФ и РБ</p>
+						</li>
+
+						<li>
+							<img src="img/icon_about3.png">
+							<p class="title">Многоуровневый<br>контроль качества</p>
+							<p class="text">Контроль качества службой<br> технадзора — соблюдение<br> технологии производства работ</p>
+						</li>
+
+						<li>
+							<img src="img/icon_about4.png">
+							<p class="title">Выдерживаем высокие<br>темпы строительства</p>
+							<p class="text">Материально-техническое<br> оснащение позволяет успешно<br> реализовывать сложные проекты</p>
+						</li>
+
+						<li>
+							<img src="img/icon_about5.png">
+							<p class="title">Надежные отношения<br>с поставщиками и кредиторами</p>
+							<p class="text">Выстроены отношения с<br> производителями стройматериалов<br> и кредитными организациями</p>
+						</li>
+
+						<li>
+							<img src="img/icon_about6.png">
+							<p class="title">Успешно реализуем<br>гос. заказы с 2009 г.</p>
+							<p class="text">7-летний опыт реализации<br> Контрактов в соответствии<br> с 94, 223, 44-ФЗ</p>
+						</li>
+					</ul>
+					<div class="line"></div>
+
+					<h2>Наши клиенты</h2>
+					<div class="img"><img src="img/client.jpg"></div>
+				</div>
+
+				<h2>Благодарности клиентов</h2>
+
+				<div class="slide1">
+				
+					    <div>
+					    <div class="popup-gallery">
+					    	<div class="one"><a href="img/sert.jpg"><img src="img/slide1_ser1.jpg"><span></span></a></div>
+					    	<div class="two"><a href="img/sert.jpg"><img src="img/slide1_ser1.jpg"><span></span></a></div>
+					    </div>
+					    </div>
+					     <div>
+					    <div class="popup-gallery">
+					    	<div class="one"><a href="img/sert.jpg"><img src="img/slide1_ser2.jpg"><span></span></a></div>
+					    	<div class="two"><a href="img/sert.jpg"><img src="img/slide1_ser2.jpg"><span></span></a></div>
+					    </div>
+					    </div>
+					     <div>
+					    <div class="popup-gallery">
+					    	<div class="one"><a href="img/sert.jpg"><img src="img/slide1_ser3.jpg"><span></span></a></div>
+					    	<div class="two"><a href="img/sert.jpg"><img src="img/slide1_ser3.jpg"><span></span></a></div>
+					    </div>
+					    </div>
+					     <div>
+					    <div class="popup-gallery">
+					    	<div class="one"><a href="img/sert.jpg"><img src="img/slide1_ser4.jpg"><span></span></a></div>
+					    	<div class="two"><a href="img/sert.jpg"><img src="img/slide1_ser4.jpg"><span></span></a></div>
+					    </div>
+					    </div>
+					     <div>
+					    <div class="popup-gallery">
+					    	<div class="one"><a href="img/sert.jpg"><img src="img/slide1_ser1.jpg"><span></span></a></div>
+					    	<div class="two"><a href="img/sert.jpg"><img src="img/slide1_ser1.jpg"><span></span></a></div>
+					    </div>
+					    </div>
+
+					  
+ 				 </div>
+			</div>
+		</div>
+
+		<div id="block11">
+			<div class="wrapper">
+				<h2>География работ</h2>
+				<div class="maps_russian">
+					<p>Мы выполняем работы по вентилируемым<br>фасадам в <span>центральном регионе России</span></p>
+				</div>
+			</div>
+		</div>
+
+		<div id="block12">
+			<div class="wrapper">
+				<h2>Допуски и разрешения</h2>
+
+				 <div class="slide2">
+					    <div>
+					    <div class="popup-gallery">
+					    <a href="img/sert.jpg"><img src="img/sertslide1.png"><span></span></a>
+					    </div>					    	
+					    </div>
+
+					    <div>
+					    <div class="popup-gallery">
+					    <a href="img/sert.jpg"><img src="img/sertslide2.png"><span></span></a>
+					    </div>					    	
+					    </div>
+
+					    <div>
+					    <div class="popup-gallery">
+					    <a href="img/sert.jpg"><img src="img/sertslide3.png"><span></span></a>
+					    </div>					    	
+					    </div>
+
+					    <div>
+					    <div class="popup-gallery">
+					    <a href="img/sert.jpg"><img src="img/sertslide1.png"><span></span></a>
+					    </div>					    	
+					    </div>
+
+
+				</div>
+ 				 
+
+ 
+
+			</div>
+		</div>
+
+		<div id="block13">
+			<div class="wrapper">
+				<h2>Наши контакты</h2>
+				<div class="address">
+					<img src="img/icon_address.png">
+					<p class="title">Адрес</p>
+					<p class="text">г. Москва, ул. Сосинская, д.43</p>
+				</div>
+					<div class="line"></div>
+					<div class="phone">
+					<img src="img/icon_phone1.png">
+					<p class="title">Телефон</p>
+					<p class="text">+ 7 (495) 912-55-55</p>
+				</div>
+					<div class="line"></div>
+				<div class="mail">
+					<img src="img/icon_mail1.png">
+					<p class="title">Почта</p>
+					<p class="text">alandr@alandr.ru</p>
+				</div>
+			</div>
+		</div>
+		<div id="block14">
+
+			<div id="map" style="width:100%; height:409px"></div>
+
+		</div>
+
+		<div id="footer">
+			<div class="wrapper">
+				<div id="logo1"><a href="#"><img src="img/logo.png"></a></div>
+					<div class="slog"><p>Проектирование и монтаж<br>навесных конструкций по всей РФ</p></div>
+
+					<div class="rekvizit"><p>Реквизиты компании</p></div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>	
+<script>
+$(document).ready(function(){
+    $(".add").click(function(){
+        $("#comment, .comment").slideToggle("fast");
+        $(this).toggleClass("active");
+    });
+});
+</script>
+
+
+
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.slide2').slick({
+      	arrows: true,
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 1
+});
+
+      $('.slide1').slick({
+      	arrows: true,
+  		infinite: true,
+  		slidesToShow: 4,
+  		slidesToScroll: 1
+});
+    });
+  </script>
+</body>
+</html>
